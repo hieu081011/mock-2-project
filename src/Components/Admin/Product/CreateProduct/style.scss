@@ -1,0 +1,85 @@
+.CreateProduct{
+    
+    display: grid;
+    gap: 30px;
+    grid-template-areas: "a b ""a c ""a d ";
+    grid-template-columns: 1fr 400px;
+    & >div{
+        box-shadow: 0.5px 0.5px 12px rgba(0, 0, 0, 0.25);
+        & >h3:first-child{
+            padding: 10px 22px;
+            font-size: var(--large);
+            font-weight: var(--bold);
+            border-bottom: 1px solid #929395;
+        }
+        & >div:last-child{
+            padding: 22px;
+        }
+    }
+    &__basicInfomation{
+        grid-area: a;
+        &--content{
+            & h4{
+                margin-bottom: 10px;
+                font-size: var(--small);
+            }
+            & input, textarea{
+                margin-bottom: 20px;
+                border: 1px solid #929395;
+                font-size: 20px;
+                height: 40px;
+                padding-left: 10px;
+                border-radius: 2px;
+            }
+            & >div:nth-child(5){
+                
+                display: flex;
+                
+                gap: 40px;
+                & >div{
+                   width: 100%;
+                }
+            }
+            & >textarea{
+                height: 112px;
+                
+            }
+        }
+    }
+    &__images{
+        grid-area: b;
+    }
+    &__categories{
+        grid-area: c;
+        &--content{
+            &>div{
+                border: 1px solid #929395;
+                padding:10px;
+                & >ul{
+                   
+                    & >li{
+                        white-space: nowrap;
+                        width: fit-content;
+                        display: inline-flex;
+                        align-items: center;
+                        background-color: #919eab;
+                        padding: 2px 5px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                        gap: 5px;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                        & >span{
+                            font-style: var(--small);
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__rating{
+        grid-area: d;
+    }
+}

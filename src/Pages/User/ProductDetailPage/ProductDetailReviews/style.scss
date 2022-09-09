@@ -1,0 +1,23 @@
+.ProductDetailReviews{
+    width: 600px;
+    border-bottom:2px solid #DFDFDF;
+    &__header{
+
+    }
+    &__review{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 30px;
+        & >div{
+            color: #6D6E70;
+        }
+        &--stars{
+            color: #F8E825!important;
+        }
+        &--comment{
+            padding: 10px 0 10px;
+        }
+    }
+    
+}

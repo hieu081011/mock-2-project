@@ -1,0 +1,36 @@
+.Pagination{
+    & >ul{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        & >li{
+            width: 32px;
+            height: 32px;
+            background-color: #e5e5e5;
+            font-size: 14px;
+            font-weight: 700;
+            
+            border-radius: 4px;
+            transition-duration: .3s;
+            & >a{
+                display: flex;
+            align-items: center;
+            justify-content: center;
+                width: 100%;
+                height: 100%;
+            }
+            &:hover{
+                background-color: #9195ab;
+                
+                cursor: pointer;
+                & >a{
+                    color: #ffd333;
+                }
+            }
+        }
+        .active{
+            background-color: #ffd333;
+        }
+        
+    }
+}

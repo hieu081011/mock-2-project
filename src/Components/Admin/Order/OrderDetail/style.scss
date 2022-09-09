@@ -1,0 +1,89 @@
+.OrderDetail{
+   
+    box-shadow: 0.5px 0.5px 12px rgba(0, 0, 0, 0.25);
+    &__firstSection{
+        padding: 20px 23px;
+        border: 1px solid #929395;
+        display: flex;
+        justify-content: space-between;
+        &-left{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            & >div{
+                display: flex;
+                gap: 10px;
+                & >span{
+                    font-size: var(--medium);
+                    
+                }
+                
+                & >h4{
+                    font-size: var(--extra-small);
+                }
+            }
+            & >h3:last-child{
+                font-size: 16px;
+                color: #929395;
+            }
+        }
+        &-right{
+            display: flex;
+            gap: 30px;
+            & >div{
+                align-self: flex-end;
+                font-size: var(--small);
+                font-weight: 500;
+                & >select{
+                    height: 40px;
+                    margin-top: 5px;
+                    font-size: var(--small);
+                    font-weight: 500;
+                    padding: 5px 18px;
+                }
+            }
+            & >button{
+                align-self: flex-end;
+                font-size: var(--medium);
+                width: 147px;
+                height: 40px;
+                background-color:var(--main-yellow) ;
+                font-weight: 600;
+                border-radius: 4px;
+                
+            }
+        }
+    }
+    &__secondSection{
+        padding: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        &--item{
+            display: flex;
+            gap: 15px;
+        }
+        &--logo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            width: 75px;
+            height: 75px;
+            background-color: #3d464d;
+            color: var(--main-yellow);
+            border-radius: 50%;
+        }
+        &--info{
+            & >h3{
+                font-size: var(--medium);
+                font-weight: 600;
+            }
+            & >h4{
+                font-size: 16px;
+                font-weight: 400;
+                color: #3d464d;
+            }
+        }
+    }
+}

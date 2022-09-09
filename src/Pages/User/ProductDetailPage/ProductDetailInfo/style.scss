@@ -1,0 +1,37 @@
+.ProductDetailInfo{
+    width: 400px;
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    &__name{
+        font-size: 25px;
+        padding: 20px 20px 40px;
+        text-transform: uppercase;
+        
+    }
+    &__rating{
+        padding: 20px 20px 10px;
+        border-top:2px solid #DFDFDF;
+        &--stars{
+            color: #EBDC23;
+            margin-right: 10px;
+        }
+        &--reviews{
+            
+            font-size: var(--medium);
+        }
+    }
+    &__price{
+        padding: 20px ;
+        border-top: 2px solid #DFDFDF;
+        border-bottom: 2px solid #DFDFDF;
+        font-size: var(--medium);
+        & >span{
+            font-size: var(--large);
+        }
+    }
+    &__description{
+        padding: 20px;
+        font-size: var(--medium);
+    }
+}

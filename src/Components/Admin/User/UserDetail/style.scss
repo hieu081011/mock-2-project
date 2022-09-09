@@ -1,0 +1,84 @@
+.UserDetail{
+
+    box-shadow: 0.5px 0.5px 12px rgba(0, 0, 0, 0.25);
+    
+    &__top{
+        font-family: 'Work Sans', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 33px 0;
+        border-bottom: 1px solid #929395;
+        &--avatar{
+            width: 240px;
+            height: 240px;
+            & >img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+        &--name{
+            
+            font-family: inherit;
+            font-size: 35px;
+            font-weight: var(--bold);
+        }
+        &--email{
+            
+
+            color: #2234d2;
+            font-size: 25px;
+            
+        }
+        &--phone{
+            font-size: 25px;
+            font-weight: var(--light);
+        }
+    }
+    &__bottom{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 33px 0;
+        gap: 34px;
+        & >div{
+            font-family: 'Work Sans', sans-serif;
+            
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 25px;
+            align-items: center;
+            & >h3{
+                
+                font-weight: 500;
+            }
+            & >span{
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+            }
+            & .role{
+                width: 123px;
+                height: 39px;
+                background-color: #4b9529;
+                
+                border-radius: 50px;
+                
+            }
+            & .check{
+                width: 35px;
+                height: 35px;
+                background-color: #387b18;
+                border-radius: 50%;
+                margin-right: 40px;
+            }
+        }
+    }
+}

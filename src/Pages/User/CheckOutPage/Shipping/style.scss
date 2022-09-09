@@ -1,0 +1,29 @@
+.Shipping{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &__header{
+        font-size: 30px;
+    }
+    &__field{
+        & >input{
+            margin-top: 10px;
+            font-size: 20px;
+            padding: 20px;
+            background-color:#F7F7F9;
+        }
+        &--name{
+            font-weight: 500;
+            color: #63778C;
+        }
+    }
+    & >button{
+        text-transform: uppercase;
+        height: 50px;
+        width: 120px;
+        background-color: black;
+        color: white;
+
+    }
+}

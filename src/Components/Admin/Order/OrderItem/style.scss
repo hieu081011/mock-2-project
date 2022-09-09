@@ -1,0 +1,43 @@
+.OrderItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 20px;
+    height: 80px;
+    border-top: 1px solid #929395;
+    position: relative; 
+    &__buttons{
+        & >button{
+            margin: 0 5px;
+            font-size: 24px;
+        }
+        & >button:first-child{
+            color: #387b18;
+        }
+        & >button:last-child{
+            color: #f02020;
+        }
+    }
+    &__userid{
+        
+        & >a{
+            top: 0;
+            left: 0;
+            width: 80%;
+            height: 100%;
+            position: absolute;
+        }
+    }
+    &__paided{
+        & >span{
+            width: 72px;
+            height: 26px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            color: white;
+            background-color: var(--main-yellow);
+        }
+    }
+}

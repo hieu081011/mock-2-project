@@ -1,0 +1,97 @@
+.CreateUser{
+    
+    display: grid;
+    gap: 30px;
+    grid-template-areas: "a b ""a c ";
+    grid-template-columns: 1fr 400px;
+    & >div{
+        box-shadow: 0.5px 0.5px 12px rgba(0, 0, 0, 0.25);
+        & >h3:first-child{
+            padding: 10px 22px;
+            font-size: var(--large);
+            font-weight: var(--bold);
+            border-bottom: 1px solid #929395;
+        }
+        & >div:last-child{
+            padding: 22px;
+        }
+    }
+    &__userInfomation{
+        grid-area: a;
+        &--content{
+            & h4{
+                margin-bottom: 10px;
+                font-size: var(--small);
+            }
+            & input:nth-child(2),input:nth-child(4), select{
+                margin-bottom: 20px;
+                border: 1px solid #929395;
+                font-size: var(--medium);
+                height: 40px;
+                padding-left: 10px;
+                border-radius: 2px;
+            }
+            & >div{
+                
+                display: flex;
+                align-items: center;
+                gap: 40px;
+                border: 1px solid #929395;
+                height: 40px;
+                padding-left: 10px;
+                border-radius: 2px;
+                margin-bottom: 20px;
+                & >input{
+                    font-size: var(--medium);
+                }
+                & >span{
+                    font-size: 20px;
+                    margin-right: 20px;
+                    padding-top: 2px;
+                    &:hover{
+                        color: var(--main-yellow);
+                        cursor: pointer;
+                    }
+                }
+            }
+            
+        }
+    }
+    &__avatar{
+        grid-area: b;
+    }
+    &__anotherInfo{
+        grid-area: c;
+        &--content{
+            & >h4{
+                margin-bottom: 10px;
+                font-size: var(--small);
+            }
+            & >input{
+                margin-bottom: 20px;
+                border: 1px solid #929395;
+                font-size: var(--medium);
+                height: 40px;
+                padding-left: 10px;
+                border-radius: 2px;
+            }
+            & >div:nth-child(3){
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr;
+                grid-auto-rows: min-content;
+                row-gap: 20px;
+                column-gap: 10px;
+                & >div{
+                    font-size: var(--small);
+                    display: flex;
+                    gap: 10px;
+                    & >input[type="radio"]{
+                        width: var(--small);
+                       background-color: black;
+                    }
+                }
+            }
+        }
+    }
+    
+}

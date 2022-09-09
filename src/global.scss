@@ -1,0 +1,77 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    $small: 18px;
+    $medium:20px;
+    line-height: 115%;
+}
+:root{
+    --main-grey:#3D464D;
+    --main-yellow:#FFD333;
+    --extra-small:15px;
+    --small: 18px;
+    --medium:20px;
+    --large:22px;
+    --bold:700;
+    --medium:550;
+    --light:400
+}
+
+input{
+             
+    width: 100%;
+    border: none;
+&:focus{
+    outline: none;   
+}}
+    
+a{
+   display: block;
+    text-decoration: none;
+    color: inherit;
+    &:hover{
+        
+        cursor: pointer;
+    }
+}
+button{
+    border: none;
+    background-color: transparent;
+    &:hover{
+        cursor: pointer;
+    }
+}
+ul{
+    list-style: none;
+}
+textarea,select{
+    resize: none;
+    width: 100%;
+    &:focus{
+        outline: none;
+    }
+}
+h3,h2,h4,h5,span{
+    font-family: inherit;
+}
+// .page-container{
+//    width: 100vw;
+//    height: 100vh;
+//    display: grid;
+//    grid-template-areas: 'navbar appbar''navbar content';
+//    grid-template-columns: 225px 1fr;
+//    grid-template-rows: 80px 1fr;
+//    & .Navigation{
+//     grid-area: navbar;
+//    }
+//    & .AppBar{
+//     grid-area: appbar;
+//    }
+//    & .page-content{
+//     padding: 30px;
+//     grid-area: content;
+//    }
+// }
