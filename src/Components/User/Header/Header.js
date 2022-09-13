@@ -2,8 +2,14 @@ import './style.scss'
 import { BsFillCartFill, BsFillPersonFill, BsFillCaretDownFill } from 'react-icons/bs'
 import { RiProfileFill, RiLogoutBoxRLine } from 'react-icons/ri'
 import { useState } from 'react'
+import { useAuth } from '../../../context/ContextProvider'
+
 const Header = () => {
     const [showSetting, setShowSetting] = useState(false)
+    const { auth } = useAuth()
+
+    if (auth?.user?.role === 'admin')
+        return (<></>)
     return (
         <div className="Header">
             <div className='Header__left'>

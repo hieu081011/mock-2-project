@@ -57,21 +57,21 @@ textarea,select{
 h3,h2,h4,h5,span{
     font-family: inherit;
 }
-// .page-container{
-//    width: 100vw;
-//    height: 100vh;
-//    display: grid;
-//    grid-template-areas: 'navbar appbar''navbar content';
-//    grid-template-columns: 225px 1fr;
-//    grid-template-rows: 80px 1fr;
-//    & .Navigation{
-//     grid-area: navbar;
-//    }
-//    & .AppBar{
-//     grid-area: appbar;
-//    }
-//    & .page-content{
-//     padding: 30px;
-//     grid-area: content;
-//    }
-// }
+.admin-page-container{
+   width: 100vw;
+   height: 100vh;
+   display: grid;
+   grid-template-areas: 'navbar appbar''navbar content';
+   grid-template-columns: 225px 1fr;
+   grid-template-rows: 80px 1fr;
+   & .Navigation{
+    grid-area: navbar;
+   }
+   & .AppBar{
+    grid-area: appbar;
+   }
+   & .admin-page-content{
+    padding: 30px;
+    grid-area: content;
+   }
+}

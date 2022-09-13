@@ -3,7 +3,7 @@ import './style.scss'
 import { RiDeleteBin6Line, RiDraftLine, RiStarFill, RiStarLine } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 
-const UserItem = () => {
+const UserItem = ({ role, name, email, avatar, contact, isEmailVerified }) => {
     return (
         <>
             <div className='UserItem'>
@@ -14,8 +14,8 @@ const UserItem = () => {
                     </div>
                     <div className='UserItem__user--info'>
                         <Link to='/user/123' />
-                        <div>Lady Gaga <div>Admin</div></div>
-                        <h4>ladygaga@gmail.com</h4>
+                        <div>{name} <div>Admin</div></div>
+                        <h4>{email}</h4>
                     </div>
                 </div>
                 <div className='UserItem__contact'>
@@ -25,7 +25,7 @@ const UserItem = () => {
                     Active
                 </div>
                 <div className='UserItem__verifyEmail'>
-                    No
+                    {isEmailVerified}
                 </div>
                 <div className='UserItem__verifyContact'>
                     Yes

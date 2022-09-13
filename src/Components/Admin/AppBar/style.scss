@@ -67,7 +67,7 @@
         &--info{
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
             > div:first-child{
                 width: 44px;
                 height: 44px;
@@ -79,7 +79,7 @@
                     object-fit: cover;
                 }
             }
-            & >div:last-child{
+            & >div:nth-child(2){
                 & >h3{
                     font-size: 18px;
                     font-weight: 400;
@@ -88,6 +88,11 @@
                     font-size: 15px;
                     font-weight: 400;
                     color: #929395;
+                }
+            }
+            & >div:nth-child(3){
+                & >button{
+                    font-size: 25px;
                 }
             }
         }

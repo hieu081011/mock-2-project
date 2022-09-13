@@ -1,0 +1,56 @@
+.OrderDetailPage{
+    
+    &__content{
+        width: 700px;
+        &--header{
+            font-size: 30px;
+            margin-bottom: 40px;
+
+        }
+        &--field{
+            font-size: var(--medium);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border-bottom: 2px solid #36474F;
+            & >div:first-child{
+                font-size: 25px;
+            }
+            & >h3{
+                font-weight: 500;
+            }
+            &-item{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                & >div{
+                    width: 50px;
+                    height: 50px;
+                    & >img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                & >h3{
+                    font-size: var(--medium);
+                    font-weight: 500;
+                    color: #36474F;
+                }
+            }
+            & .errorStatus{
+                padding: 20px 20px 15px 20px;
+                color: #B48A7B;
+                background-color: #F7DDDC;
+                border: 1px solid #F4CECD;
+            }
+            & .successStatus{
+                padding: 20px 20px 15px 20px;
+                background-color: #DBF2E3;
+                color: #4C7764;
+                border:1px solid #CCEDD7
+            }
+        }
+    }
+}

@@ -1,7 +1,21 @@
 import React from 'react'
 import './style.scss'
 import { FaBell, FaSearch, FaBars } from 'react-icons/fa'
+import { useAuth } from '../../../context/ContextProvider'
+import { FiLogOut } from 'react-icons/fi'
+import { logout } from '../../../api/auth'
 const AppBar = () => {
+    const { auth, setAuth } = useAuth()
+    const handleLogOut = async () => {
+        const refreshToken = localStorage.getItem('refresh_token')
+        try {
+            await logout(refreshToken)
+        } catch (error) {
+            console.log(error)
+        }
+        localStorage.clear()
+        setAuth({})
+    }
     return (
         <>
             <div className='AppBar'>
@@ -23,8 +37,11 @@ const AppBar = () => {
 
                         </div>
                         <div>
-                            <h3>Nam Nguyen</h3>
+                            <h3>{auth.user.username}</h3>
                             <h4>Admin</h4>
+                        </div>
+                        <div>
+                            <button onClick={handleLogOut}><FiLogOut /></button>
                         </div>
                     </div>
                 </div>

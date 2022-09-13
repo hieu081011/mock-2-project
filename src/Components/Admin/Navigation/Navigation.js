@@ -8,25 +8,25 @@ const Navigation = () => {
     const location = useLocation()
     useLayoutEffect(() => {
         const pathname = location.pathname.split('/')
-        if (pathname[1] === 'product') {
+        if (pathname[2] === 'product') {
             setMaintabActive({ ...mainTabActive, 0: true })
-            if (pathname[2] === 'create') {
+            if (pathname[3] === 'create') {
                 setSubTabActive(3)
             }
             else {
                 setSubTabActive(2)
             }
         }
-        if (pathname[1] === 'user') {
+        if (pathname[2] === 'user') {
             setMaintabActive({ ...mainTabActive, 1: true })
-            if (pathname[2] === 'create') {
+            if (pathname[3] === 'create') {
                 setSubTabActive(5)
             }
             else {
                 setSubTabActive(4)
             }
         }
-        if (pathname[1] === 'order') {
+        if (pathname[2] === 'order') {
             setSubTabActive(6)
         }
     }, [location])
@@ -43,7 +43,8 @@ const Navigation = () => {
                         onClick={() => setSubTabActive(1)}
                     >
                         <span><RiDashboardFill /></span>
-                        <a>DASHBOARD</a>
+                        <Link to='/admin'>DASHBOARD</Link>
+
                         <span></span>
                     </li>
                     <li className={`Navigation__category--main ${mainTabActive[0] ? 'active-main' : undefined} `}
@@ -58,10 +59,10 @@ const Navigation = () => {
                         <ul >
                             <li className={subTabActive === 2 ? 'active' : undefined}
                                 onClick={() => setSubTabActive(2)}
-                            ><Link to='/product'  >Product List</Link></li>
+                            ><Link to='/admin/product'  >Product List</Link></li>
                             <li className={subTabActive === 3 ? 'active' : undefined}
                                 onClick={() => setSubTabActive(3)}
-                            ><Link to='/product/create'>Add Product</Link></li>
+                            ><Link to='/admin/product/create'>Add Product</Link></li>
                         </ul>
                     </li>
                     <li className={`Navigation__category--main ${mainTabActive[1] ? 'active-main' : undefined} `}
@@ -77,17 +78,17 @@ const Navigation = () => {
                         <ul>
                             <li className={subTabActive === 4 ? 'active' : undefined}
                                 onClick={() => setSubTabActive(4)}
-                            ><Link to='/user'>User List</Link></li>
+                            ><Link to='/admin/user'>User List</Link></li>
                             <li className={subTabActive === 5 ? 'active' : undefined}
                                 onClick={() => setSubTabActive(5)}
-                            ><Link to='/user/create'>Add User</Link></li>
+                            ><Link to='/admin/user/create'>Add User</Link></li>
                         </ul>
                     </li>
                     <li className={`Navigation__category--main ${subTabActive === 6 ? 'active' : undefined}`}
                         onClick={() => setSubTabActive(6)}
                     >
                         <span><RiShoppingCartLine /></span>
-                        <Link to='/order' >Orders</Link>
+                        <Link to='/admin/order' >Orders</Link>
                     </li>
                     <li className='Navigation__category--main'>
                         <span><RiSettings5Line /></span>
