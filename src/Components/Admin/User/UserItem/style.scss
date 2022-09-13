@@ -1,10 +1,15 @@
 .UserItem{
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: space-around   ;
+    grid-template-columns: 100px 2fr 1fr 1fr 1fr 1fr 1fr;
     font-size: var(--medium);
     height: 80px;
     border-top: 1px solid #929395;
+    & >div:first-child{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     &__id{
         font-weight: 700;
     }

@@ -1,9 +1,25 @@
 .CreateProduct{
-    
+    width: 100%;
+    min-height: 600px;
+    position: relative;
     display: grid;
     gap: 30px;
     grid-template-areas: "a b ""a c ""a d ";
     grid-template-columns: 1fr 400px;
+    &__error{
+        position: absolute;
+        top:-30px;
+        left: 200px;
+        color: red;
+    }
+    &__button{
+        top:-40px;
+        font-weight: 700;
+        background-color: var(--main-yellow);
+        color: black;
+        padding: 10px;
+        position: absolute;
+    }
     & >div{
         box-shadow: 0.5px 0.5px 12px rgba(0, 0, 0, 0.25);
         & >h3:first-child{
@@ -48,9 +64,23 @@
     }
     &__images{
         grid-area: b;
+        width: 100%;
+        & >div{
+            padding: 20px;
+        }
+        & input{
+            
+            
+            border: 1px solid #929395;
+            font-size: 20px;
+            height: 40px;
+            padding-left: 10px;
+            border-radius: 2px;
+        }
     }
     &__categories{
         grid-area: c;
+        
         &--content{
             &>div{
                 border: 1px solid #929395;
@@ -58,6 +88,9 @@
                 & >ul{
                    
                     & >li{
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        max-width: 200px;
                         white-space: nowrap;
                         width: fit-content;
                         display: inline-flex;

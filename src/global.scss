@@ -40,8 +40,10 @@ a{
 button{
     border: none;
     background-color: transparent;
+    transition-duration: .3s;
     &:hover{
         cursor: pointer;
+        opacity: .8;
     }
 }
 ul{

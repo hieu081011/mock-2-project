@@ -2,8 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import * as api from '../../api/order.js'
 export const getOrders = createAsyncThunk('/order/getOrders', async ({ page, size, sortBy, order }) => {
     try {
-        const { data: { data } } = await api.getOrders({ page, size, sortBy, order })
-        return data
+        const { data: { data: { orders } } } = await api.getOrders({ page, size, sortBy, order })
+        return orders
     } catch (error) {
         return error
     }

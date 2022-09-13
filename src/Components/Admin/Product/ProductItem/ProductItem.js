@@ -1,8 +1,19 @@
 import React from 'react'
 import './style.scss'
 import { RiDeleteBin6Line, RiDraftLine, RiStarFill, RiStarLine } from 'react-icons/ri'
-
+import { useNavigate } from 'react-router-dom'
+import { deleteProduct } from '../../../../api/product'
 const ProductItem = ({ id, name, brand, category, countInStock, price, rating, images }) => {
+    const navigate = useNavigate()
+    const handleDelete = async () => {
+        try {
+            await deleteProduct(id)
+            alert('Delete product success')
+            window.location.reload()
+        } catch (error) {
+            alert('Delete product failed')
+        }
+    }
     return (
         <>
             <div className='ProductItem'>
@@ -36,8 +47,8 @@ const ProductItem = ({ id, name, brand, category, countInStock, price, rating, i
                     <span><RiStarLine /></span>
                 </div>
                 <div className='ProductItem__buttons'>
-                    <button><RiDraftLine /></button>
-                    <button><RiDeleteBin6Line /></button>
+                    <button onClick={() => navigate(`/admin/product/update/${id}`)}><RiDraftLine /></button>
+                    <button onClick={handleDelete}><RiDeleteBin6Line /></button>
                 </div>
             </div>
         </>

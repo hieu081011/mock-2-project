@@ -14,7 +14,7 @@ function displayOptions(type) {
     if (type === 'product') {
         return {
             filterOptions: ['ID', 'Product', 'Brand', 'Category', 'Stock', 'Price', 'Rating'],
-
+            grid: 'productGrid',
             query: 'Search products',
             mapCallback: (item) => <ProductItem name={item.name} key={item.id} id={item.id} brand={item.brand} category={item.category} countInStock={item.countInStock} price={item.price} rating={item.rating} images={item.images} />
         }
@@ -22,16 +22,17 @@ function displayOptions(type) {
     if (type === 'user') {
         return {
             filterOptions: ['ID', 'User', 'Contact', 'Status', 'Verify Email', 'Verify Contact'],
-            item: UserItem,
+            grid: 'userGrid',
             query: 'Search user',
-            mapCallback: (item) => <UserItem role={item.role} name={item.username} email={item.email} avatar={item.avatar} contact={item.contact} isEmailVerified={item.isEmailVerified} key={item.id} />
+            mapCallback: (item) => <UserItem role={item.role} name={item.username} email={item.email} avatar={item.avatar} contact={item.contact} isEmailVerified={item.isEmailVerified} key={item.id} id={item.id} />
         }
     }
     if (type === 'order') {
         return {
             filterOptions: ['ID', 'User ID', 'Amount', 'Address', 'Contact', 'Date', 'Paided', 'Status'],
-            item: OrderItem,
-            query: 'Search order'
+            grid: 'orderGrid',
+            query: 'Search order',
+            mapCallback: (item) => <OrderItem id={item.id} address={item.address} userId={item.userId} status={item.status} contact={item.contact} isPaid={item.isPaid} key={item.id} createdAt={item.createdAt} price={item.totalPrice} />
         }
     }
 }
@@ -50,7 +51,7 @@ const Table = ({ type, setDisplayOptions, display, data }) => {
                     <input type='text' placeholder={tableType.query}></input>
                 </div>
             </div>
-            <div className='Table__displayOptions'>
+            <div className={`Table__displayOptions ${tableType.grid}`}>
                 {
                     tableType.filterOptions.map((item) => (
                         <div onClick={() => setDisplayOptions((state) => ({ ...state, sortBy: item.toLowerCase() }))} key={item}>

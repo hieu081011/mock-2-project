@@ -22,7 +22,12 @@ export const routes = [
         roles: ["admin"],
     },
     {
-        path: "/admin/order ",
+        path: "/admin/product/update/:productId",
+        element: <CreateProduct type='update' />,
+        roles: ["admin"],
+    },
+    {
+        path: "/admin/order",
         element: <OrderPage />,
         roles: ["admin"],
     },

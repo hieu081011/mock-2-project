@@ -17,7 +17,7 @@ API.interceptors.response.use(
         const originalRequest = error.config;
         if (
             error.response.status === 401 &&
-            originalRequest.url === `${process.env.REACT_APP_BASEURL}/auth/refresh-token`
+            originalRequest.url === `${process.env.REACT_APP_BASEURL}/auth/refresh-tokens`
         ) {
             console.log('mistake')
             localStorage.clear()
@@ -31,6 +31,7 @@ API.interceptors.response.use(
                 const { data: { data } } = await getNewToken(
                     localStorage.getItem("refresh_token")
                 );
+                console.log("refreshTokenData", data)
                 localStorage.setItem("access_token", data.access.token);
                 localStorage.setItem("refresh_token", data.refresh.token);
                 axios.defaults.headers.common["Authorization"] =
@@ -38,7 +39,10 @@ API.interceptors.response.use(
 
                 return API(originalRequest);
             } catch (error) {
-                console.log(error);
+                console.log('mistake')
+                localStorage.clear()
+                window.location.replace("http://localhost:3000/login");
+                return Promise.reject(error);
             }
         }
         return Promise.reject(error);

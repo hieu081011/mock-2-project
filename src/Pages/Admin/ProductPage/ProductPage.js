@@ -16,6 +16,7 @@ const ProductPage = () => {
     })
     const page = query.get('page') || 1
     console.log(page)
+
     useEffect(() => {
         dispatch(getProducts({ page, ...displayOptions }))
     }, [displayOptions, page])

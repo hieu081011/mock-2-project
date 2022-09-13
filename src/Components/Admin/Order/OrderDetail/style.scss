@@ -1,6 +1,17 @@
 .OrderDetail{
-   
     box-shadow: 0.5px 0.5px 12px rgba(0, 0, 0, 0.25);
+    position: relative;
+    &__backButton{
+        position: absolute;
+        top:-22px;
+        left:10px;
+        & >button{
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap:10px
+        }
+    }
     &__firstSection{
         padding: 20px 23px;
         border: 1px solid #929395;

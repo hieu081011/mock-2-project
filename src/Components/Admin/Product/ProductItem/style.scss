@@ -1,16 +1,23 @@
 .ProductItem{
-    display: flex;
+    display: grid;
     align-items: center;
     justify-content: space-around;
+    grid-template-columns: 100px 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
     font-size: 20px;
     height: 80px;
     border-top: 1px solid #929395;
+    & >div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     &__id{
         font-weight: 700;
     }
     &__product{
         display: flex;
         align-items: center;
+        justify-content:flex-start!important;
         gap:10px;
         & >div:first-child{
             width: 60px;

@@ -1,11 +1,16 @@
 .OrderItem{
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: space-around;
+    grid-template-columns: 50px .5fr 1fr 1fr 1fr 1fr 1fr 1fr 100px;
     font-size: 20px;
     height: 80px;
     border-top: 1px solid #929395;
     position: relative; 
+    & >div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     &__buttons{
         & >button{
             margin: 0 5px;

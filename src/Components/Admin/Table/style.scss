@@ -25,16 +25,26 @@
             
         }
     }
+    & .productGrid{
+        grid-template-columns: 100px 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    & .userGrid{
+        grid-template-columns: 100px 2fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    & .orderGrid{
+        grid-template-columns: 100px .5fr 1fr 1fr 1fr 1fr 1fr 1fr 100px;
+    }
+
     &__displayOptions{
-        display: flex;
+        display: grid;
         align-items: center;
-        justify-content: space-around;
         padding: 20px 0 40px;
         
         & >div{
             font-size: var(--medium);
             font-weight: 700;
             display: flex;
+            justify-content: center;
             align-items: center;
             gap: 5px;
             &:hover{
