@@ -77,3 +77,8 @@ h3,h2,h4,h5,span{
     grid-area: content;
    }
 }
+.user-page-container{
+    & .user-page-content{
+        padding: 30px;
+    }
+}

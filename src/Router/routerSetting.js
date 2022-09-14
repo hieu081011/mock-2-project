@@ -17,6 +17,11 @@ export const routes = [
         roles: ["admin"],
     },
     {
+        path: "/admin/product/search/:searchId",
+        element: <ProductPage />,
+        roles: ["admin"]
+    },
+    {
         path: "/admin/product/create",
         element: <CreateProduct />,
         roles: ["admin"],

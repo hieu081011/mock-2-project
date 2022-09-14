@@ -39,11 +39,11 @@ const OrderDetail = () => {
                         <div className='OrderDetail__firstSection-left'>
                             <div>
                                 <span><MdCalendarToday /></span>
-                                <h4>Created at: {order.createAt}</h4>
+                                <h4>Created at: {order.createdAt.substring(0, 10)}</h4>
                             </div>
                             <div>
                                 <span ><MdEditCalendar /></span>
-                                <h4>Updated at: {order.updateAt}</h4>
+                                <h4>Updated at: {order.updatedAt.substring(0, 10)}</h4>
                             </div>
                             <h3>Order ID : {order.id}</h3>
                         </div>

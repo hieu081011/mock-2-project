@@ -7,6 +7,9 @@ const Login = () => {
     if (auth?.user?.role === 'admin') {
         return (<Navigate to='/admin' />)
     }
+    if (auth?.user?.role === 'user') {
+        return (<Navigate to='/' />)
+    }
     return (
         <div className="Login">
             <LoginForm />

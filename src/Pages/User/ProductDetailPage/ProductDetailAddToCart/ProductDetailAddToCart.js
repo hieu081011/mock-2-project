@@ -1,7 +1,7 @@
 import './style.scss'
 import { IoMdRemove, IoMdAdd } from 'react-icons/io'
 import { useState } from 'react'
-const ProductDetailAddToCart = () => {
+const ProductDetailAddToCart = ({ product }) => {
     const [quaility, setQuaility] = useState(1)
     return (
         <div className="ProductDetailAddToCart">
@@ -10,7 +10,7 @@ const ProductDetailAddToCart = () => {
                     Price:
                 </div>
                 <div className='ProductDetailAddToCart__wrapper--value'>
-                    $399.99
+                    ${product.price}.99
                 </div>
 
 
@@ -20,7 +20,7 @@ const ProductDetailAddToCart = () => {
                     Status:
                 </div>
                 <div className='ProductDetailAddToCart__wrapper--value'>
-                    In Stock
+                    {product.countInStock} In Stock
                 </div>
             </div>
             <div className='ProductDetailAddToCart__wrapper'>

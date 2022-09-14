@@ -1,0 +1,20 @@
+.HomeProducts{
+    &__header{
+        font-size: 30px;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+    &__grid{
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap:20px;
+    }
+    &__pagination{
+        padding: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,20 +1,20 @@
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs'
 import './style.scss'
-const ProductDetailInfo = () => {
+const ProductDetailInfo = ({ product }) => {
     return (
         <div className="ProductDetailInfo">
             <div className='ProductDetailInfo__name'>
-                Sony playstation 4 pro white version
+                {product.name}
             </div>
             <div className='ProductDetailInfo__rating'>
                 <span className='ProductDetailInfo__rating--stars'><BsStarFill /><BsStarFill /><BsStarFill /><BsStarFill /><BsStarFill /></span>
-                <span className='ProductDetailInfo__rating--reviews'>1 reviews</span>
+                <span className='ProductDetailInfo__rating--reviews'>{product.numOfReviews} reviews</span>
             </div>
             <div className='ProductDetailInfo__price'>
-                Price: <span>$399.99</span>
+                Price: <span>${product.price}.99</span>
             </div>
             <div className='ProductDetailInfo__description'>
-                Description: The ultimate home entertainment center starts with PlayStation. Whether you are into Gaming. Hd movies, television, music.
+                Description: {product.description}
             </div>
         </div>
     )

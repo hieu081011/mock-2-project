@@ -36,19 +36,21 @@ function displayOptions(type) {
         }
     }
 }
-const Table = ({ type, setDisplayOptions, display, data }) => {
-    // const displayOptions = ['ID', 'User', 'Contact', 'Status', 'Verify Email', 'Verify Contact']
+const Table = ({ type, setDisplayOptions, display, data, search, setSearch }) => {
     const location = useLocation()
     const navigate = useNavigate()
     const tableType = useMemo(() => displayOptions(type), [])
     const path = location.pathname.split('/')[2]
     const { loading } = useSelector(state => state[path])
+    const handleSearch = () => {
+        if (search) navigate(`/admin/${type}/search/${search}`)
+    }
     return (<>
         <div className='Table'>
             <div className='Table__searchSection'>
                 <div className='Table__searchSection--searchBox'>
-                    <span><FiSearch /></span>
-                    <input type='text' placeholder={tableType.query}></input>
+                    <span onClick={handleSearch}><FiSearch /></span>
+                    <input type='text' placeholder={tableType.query} value={search} onChange={(e) => setSearch(e.target.value)} />
                 </div>
             </div>
             <div className={`Table__displayOptions ${tableType.grid}`}>
@@ -66,6 +68,9 @@ const Table = ({ type, setDisplayOptions, display, data }) => {
                     tableType.mapCallback
                 ) :
                     <LoadingSpinner />
+                }
+                {
+                    !loading && data?.length === 0 && <div className='Table__content--empty'>No items found!</div>
                 }
             </div>
 

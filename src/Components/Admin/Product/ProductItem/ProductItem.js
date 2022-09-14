@@ -1,8 +1,9 @@
 import React from 'react'
 import './style.scss'
-import { RiDeleteBin6Line, RiDraftLine, RiStarFill, RiStarLine } from 'react-icons/ri'
+import { RiDeleteBin6Line, RiDraftLine } from 'react-icons/ri'
 import { useNavigate } from 'react-router-dom'
 import { deleteProduct } from '../../../../api/product'
+import { countingStars } from '../../../../features/coutingStars'
 const ProductItem = ({ id, name, brand, category, countInStock, price, rating, images }) => {
     const navigate = useNavigate()
     const handleDelete = async () => {
@@ -40,11 +41,7 @@ const ProductItem = ({ id, name, brand, category, countInStock, price, rating, i
                     ${price}
                 </div>
                 <div className='ProductItem__rating'>
-                    <span><RiStarFill /></span>
-                    <span><RiStarFill /></span>
-                    <span><RiStarFill /></span>
-                    <span><RiStarLine /></span>
-                    <span><RiStarLine /></span>
+                    {countingStars(rating)}
                 </div>
                 <div className='ProductItem__buttons'>
                     <button onClick={() => navigate(`/admin/product/update/${id}`)}><RiDraftLine /></button>

@@ -3,14 +3,17 @@ import Login from '../Components/Auth/Login/Login'
 import Register from "../Components/Auth/Register/Register";
 import Error from "../Pages/Error";
 import PrivateRoute from "./PrivateRoute";
+import HomePage from '../Pages/User/HomePage/HomePage'
 import { routes } from "./routerSetting";
+import ProductDetailPage from '../Pages/User/ProductDetailPage/ProductDetailPage'
 const Router = () => {
     return (
         <>
             <Routes>
-                <Route path='/' element={<Navigate to='/login' />} />
+                <Route path='/' element={<HomePage />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/product/:productId" element={<ProductDetailPage />} />
                 {routes.map((route) => (
                     <Route
                         key={route.path}

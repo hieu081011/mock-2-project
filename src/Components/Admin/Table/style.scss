@@ -13,8 +13,13 @@
             gap: 10px;
             & >span{
                 color:  #929395;
-                
+                transition-duration: .3s;
                 font-size: var(--medium);
+                &:hover{
+                    cursor: pointer;
+                    color: black;
+                    opacity: .9;
+                }
             }
             & >input{
                 font-size: var(--medium);
@@ -74,5 +79,13 @@
     }
     &__content{
         min-height: 450px;
+        &--empty{
+            border-radius: 5px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 10px 20px;
+            background-color: #929395;
+            
+        }
     }
 }

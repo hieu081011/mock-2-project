@@ -13,6 +13,7 @@ const LoginForm = () => {
             localStorage.setItem('auth', JSON.stringify(data))
             localStorage.setItem('access_token', data.tokens.access.token)
             localStorage.setItem('refresh_token', data.tokens.refresh.token)
+
             setAuth(data)
         } catch (error) {
             console.log(error)

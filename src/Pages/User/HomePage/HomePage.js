@@ -1,11 +1,11 @@
 import HomeSlider from "./HomeSlider/HomeSlider"
 import './style.scss'
-import HomeProduct from "./Product/HomeProduct"
+import HomeProducts from "./HomeProducts/HomeProducts"
 const HomePage = () => {
     return (
         <div className="HomePage">
             <HomeSlider />
-            <HomeProduct />
+            <HomeProducts />
         </div>
     )
 }

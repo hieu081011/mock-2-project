@@ -8,6 +8,14 @@ export const getProducts = createAsyncThunk('/product/getProducts', async ({ pag
         return error
     }
 })
+export const searchProducts = createAsyncThunk('/product/searchProducts', async ({ keyword, page, size, sortBy, order }) => {
+    try {
+        const { data: { data } } = await api.searchProducts({ keyword, page, size, sortBy, order })
+        return data.products
+    } catch (error) {
+        return error
+    }
+})
 
 export const productSlice = createSlice({
     name: 'product',
@@ -27,6 +35,18 @@ export const productSlice = createSlice({
                 console.log(action.payload)
             })
             .addCase(getProducts.rejected, (state, action) => {
+                state.loading = false
+                console.log(action.payload)
+            })
+            .addCase(searchProducts.pending, (state, action) => {
+                state.loading = true
+            })
+            .addCase(searchProducts.fulfilled, (state, action) => {
+                state.loading = false
+                state.current = action.payload
+                console.log(action.payload)
+            })
+            .addCase(searchProducts.rejected, (state, action) => {
                 state.loading = false
                 console.log(action.payload)
             })

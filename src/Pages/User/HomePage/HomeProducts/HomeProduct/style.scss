@@ -1,10 +1,11 @@
 .HomeProduct{
-    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     padding: 20px;
-    border: 2px solid gray;
+    border: 2px solid #ECECEC;
     &__imgWrapper{
         width: 100%;
         aspect-ratio: 1/1;
+        border: 2px solid #ECECEC;
         & >img{
             width: 100%;
             height: 100%;
