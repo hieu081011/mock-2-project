@@ -31,7 +31,7 @@ const Header = () => {
                 </div>
             </div>
             <div className='Header__right'>
-                <a className='Header__right--cart'><span><BsFillCartFill /></span>CART</a>
+                <Link to='/cart' className='Header__right--cart'><span><BsFillCartFill /></span>CART</Link>
                 {auth?.user?.role === 'user' ?
                     <div className='Header__right--user' onClick={() => setShowSetting(!showSetting)}>{auth.user.username}<span><BsFillCaretDownFill /></span></div>
                     :

@@ -1,8 +1,17 @@
 import './style.scss'
 import { IoMdRemove, IoMdAdd } from 'react-icons/io'
 import { useState } from 'react'
+import { createItem } from '../../../../api/cart'
 const ProductDetailAddToCart = ({ product }) => {
-    const [quaility, setQuaility] = useState(1)
+    const [quantity, setQuantity] = useState(1)
+    const handleAddToCart = async () => {
+        try {
+            await createItem({ cartId: 630, productId: product.id, quantity, price: product.price, total: product.price * quantity })
+            alert('added success')
+        } catch (error) {
+            console.lor(error)
+        }
+    }
     return (
         <div className="ProductDetailAddToCart">
             <div className='ProductDetailAddToCart__wrapper'>
@@ -29,16 +38,16 @@ const ProductDetailAddToCart = ({ product }) => {
                 </div>
                 <div className='ProductDetailAddToCart__wrapper--value'>
                     <div>
-                        <button onClick={() => setQuaility(quaility - 1)}><IoMdRemove /></button>
-                        <input type='text' value={quaility} />
-                        <button onClick={() => setQuaility(quaility + 1)}><IoMdAdd /></button>
+                        <button onClick={() => setQuantity(quantity - 1)}><IoMdRemove /></button>
+                        <input type='text' value={quantity} />
+                        <button onClick={() => setQuantity(quantity + 1)}><IoMdAdd /></button>
 
                     </div>
                 </div>
 
             </div>
             <div className='ProductDetailAddToCart__button'>
-                <button>ADD TO CART</button>
+                <button onClick={handleAddToCart}>ADD TO CART</button>
             </div>
         </div>
     )

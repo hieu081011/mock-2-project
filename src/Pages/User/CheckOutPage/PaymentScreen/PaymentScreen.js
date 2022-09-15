@@ -1,5 +1,6 @@
 import './style.scss'
-const PaymentScreen = () => {
+import { BsCircle, BsCircleFill } from 'react-icons/bs'
+const PaymentScreen = ({ setIndicator }) => {
     return (
         <div className="PaymentScreen">
             <div className="PaymentScreen__header"></div>
@@ -12,7 +13,7 @@ const PaymentScreen = () => {
                     <label>Paypal or Credit Cart</label>
                 </div>
             </div>
-            <button>Continue</button>
+            <button onClick={() => setIndicator('placeorder')}>Continue</button>
         </div>
     )
 }

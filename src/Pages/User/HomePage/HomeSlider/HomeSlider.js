@@ -15,11 +15,23 @@ const HomeSlider = () => {
         <div className="HomeSlider">
 
             <Splide options={{ ...options }} aria-label="My Favorite Images">
+
                 <SplideSlide>
-                    <img src="https://static.remove.bg/remove-bg-web/37843dee2531e43723b012aa78be4b91cc211fef/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg" alt="Image 1" />
+                    <div className='slide-detail'>
+                        <img src='https://cdnimg.vietnamplus.vn/uploaded/xtsqr/2022_08_18/83ceb28dbf6445b69422898b4a5c5d1f24533000002ab74c2f751.jpg' alt='img2' />
+                    </div>
                 </SplideSlide>
                 <SplideSlide>
-                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt="Image 2" />
+                    <div className='slide-detail'>
+
+                        <img src="https://images.fpt.shop/unsafe/filters:quality(5)/fptshop.com.vn/uploads/images/tin-tuc/147816/Originals/iPhone-14-Pro-1.JPG" alt="Image 1" />
+                    </div>
+                </SplideSlide>
+                <SplideSlide>
+                    <div className='slide-detail'>
+
+                        <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt="Image 2" />
+                    </div>
                 </SplideSlide>
             </Splide>
         </div>

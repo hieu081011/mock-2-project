@@ -5,7 +5,19 @@ import OrderPage from '../Pages/Admin/OrderPage/OrderPage'
 import UserPage from '../Pages/Admin/UserPage/UserPage'
 import UserDetail from '../Components/Admin/User/UserDetail/UserDetail'
 import CreateUser from '../Components/Admin/User/CreateUser/CreateUser'
+import CheckOutPage from '../Pages/User/CheckOutPage/CheckOutPage'
+import OrderDetailPage from '../Pages/User/OrderDetailPage/OrderDetailPage'
 export const routes = [
+    {
+        path: '/checkout/',
+        element: <CheckOutPage />,
+        roles: ['user']
+    },
+    {
+        path: '/order/:orderId',
+        element: <OrderDetailPage />,
+        roles: ['user']
+    },
     {
         path: '/admin/',
         element: <></>,

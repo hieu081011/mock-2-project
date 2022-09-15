@@ -1,5 +1,6 @@
 .OrderDetailPage{
-    
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     &__content{
         width: 700px;
         &--header{
